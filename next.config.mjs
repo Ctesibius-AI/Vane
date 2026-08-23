@@ -4,14 +4,6 @@ import pkg from './package.json' with { type: 'json' };
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  // React 19 tightened some type defs (e.g. useRef<T>() now needs an arg). The JS compiles
-  // fine; only the static type-check gate trips. Skip type/lint gates so the image builds.
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
